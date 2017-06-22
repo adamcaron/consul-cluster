@@ -25,6 +25,10 @@ services:
     networks:
     - consul
     - swarmtools_proxy
+   volumes:
+    - type: bind
+      source: ./data/{{ .Task.Slot }}
+      target: /consul/data
 
 networks:
   consul:
